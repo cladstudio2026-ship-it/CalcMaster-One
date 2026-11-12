@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
-  <link rel="manifest" href="manifest.json">
-   <meta name="theme-color" content="#ffffff">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>All-in-One Calculator</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffffff">
+<title>CalcMaster One</title>
 <style>
 :root{--bg:#fbfbfd;--fg:#2b2622;--card:#fff;--muted:#6b645c;--teal:#8fddbf;--key:#f5b65a;--keyfg:#57504a;--orange:#ff7f27;--line:#e3e3ea;--field:#f3f3f7;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -62,12 +62,7 @@ input,select{background:var(--field);border:1px solid var(--line);border-radius:
 :focus-visible{outline:3px solid #0047ff;outline-offset:2px}
 </style>
 </head>
-<body>  
-  <script>
-     if ("serviceWorker" in navigator) {
-       navigator.serviceWorker.register("sw.js");
-     }
-   </script>
+<body>
 <div class="app">
   <section class="view on" id="v-main">
     <div class="display">
@@ -208,6 +203,10 @@ function press(k){
 }
 $('#clr').onclick=()=>{ex='';done=false;$('#expr').textContent='';$('#res').textContent='0'};
 $('#del').onclick=()=>{if(done)return;ex=ex.slice(0,-1);$('#res').textContent=ex?pretty(ex):'0'};
+/* ---------- offline support ---------- */
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})});
+}
 </script>
 </body>
 </html>
