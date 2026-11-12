@@ -1,21 +1,35 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
-  "display": "fullscreen",
+  "id": "/CalcMaster-One/",
   "name": "CalcMaster One",
-  "orientation": "natural",
-  "scope": "/",
   "short_name": "CalcMaster One",
-  "start_url": "/https://cladstudio2026-ship-it.github.io/CalcMaster-One/",
-  "theme_color": "#ffffff",
-  "id": "/calculator",
-  "description": "All in one Calculator is a fast, clean and easy to use calculator for everyday needs.\n\nFeatures:\n• Standard calculations: add, subtract, multiply and divide\n• Simple, distraction-free interface\n• Works offline, no internet needed\n• Lightweight and quick to open\n• Works on Windows PCs, laptops and tablets\n\nWhether you are at school, work or home, All in one Calculator gives you quick answers without clutter.",
+  "description": "A fast, clean and easy to use calculator for everyday math. Works offline.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
   "lang": "en",
-  "display_override": [
-    "fullscreen",
-    "window-controls-overlay"
-  ],
-  "categories": [
-    "education"
+  "dir": "ltr",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
