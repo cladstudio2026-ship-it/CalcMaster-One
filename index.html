@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
+  <link rel="manifest" href="manifest.json">
+   <meta name="theme-color" content="#ffffff">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>All-in-One Calculator</title>
@@ -60,7 +62,12 @@ input,select{background:var(--field);border:1px solid var(--line);border-radius:
 :focus-visible{outline:3px solid #0047ff;outline-offset:2px}
 </style>
 </head>
-<body>
+<body>  
+  <script>
+     if ("serviceWorker" in navigator) {
+       navigator.serviceWorker.register("sw.js");
+     }
+   </script>
 <div class="app">
   <section class="view on" id="v-main">
     <div class="display">
